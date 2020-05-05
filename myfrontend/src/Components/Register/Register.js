@@ -6,7 +6,7 @@ const Register = () => {
     <div className="main_div">
       <div className="box">
         <h1>Register</h1>
-        <form action="" method="">
+        <form action="/register/send" method="POST">
           <div className="inputBox">
             <input type="text" name="username" autocomplete="off" required />
             <label for="username">Username</label>
