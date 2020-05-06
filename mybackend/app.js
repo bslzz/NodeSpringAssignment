@@ -6,9 +6,11 @@ require('dotenv').config();
 const cors = require('cors');
 
 const mongoose = require('mongoose');
+const passport = require('./passport');
+
 const initMongoose = require('./init-mongoose');
 
-const routes = require('./Routes/apiRoutes');
+const routes = require('./Routes/userRoutes');
 
 const PORT = process.env.PORT || 5000;
 
@@ -17,6 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 initMongoose(mongoose);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use(cors());
