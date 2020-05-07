@@ -6,33 +6,33 @@ const passport = require('../passport');
 //passport authentication callback
 
 router.post('/register', (req, res, next) => {
-  passport.authenticate('local-signup', function (error, user) {
-    const { username, email, password, confirm_password } = req.body;
-    if (password != confirm_password) {
-      err = 'Passowrd dont match';
+  passport.authenticate(
+    'local-signup',
+    { successRedirect: '/login', failureRedirect: '/register' },
+    function (error, user) {
+      if (error) {
+        return res.status(500).json({
+          message: error || 'Internal server error',
+        });
+      }
+      return res.json(user);
     }
-    if (!username || !email || !password | !confirm_password) {
-      err = 'Please fill all the fields';
-    }
-
-    if (error) {
-      return res.status(500).send({
-        message: error || 'Internal server error',
-      });
-    }
-    return res.send(user);
-  })(req, res, next);
+  )(req, res, next);
 });
 
 router.post('/login', (req, res, next) => {
-  passport.authenticate('local-signin', function (error, user) {
-    if (error) {
-      return res.status(500).send({
-        message: error || 'Internal server error',
-      });
+  passport.authenticate(
+    'local-signin',
+    { successRedirect: '/', failureRedirect: '/login' },
+    function (error, user) {
+      if (error) {
+        return res.status(500).json({
+          message: error || 'Internal server error',
+        });
+      }
+      return res.json(user);
     }
-    return res.send(user);
-  })(req, res, next);
+  )(req, res, next);
 });
 
 module.exports = router;

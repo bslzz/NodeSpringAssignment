@@ -19,7 +19,7 @@ class Register extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted');
+
     const { username, email, password, confirm_password } = this.state;
     axios({
       url: '/register',
@@ -32,7 +32,16 @@ class Register extends React.Component {
       },
     })
       .then((response) => {
-        this.props.history.push('/login');
+        if (password != confirm_password) {
+          alert('Passwords not matched!');
+          return;
+        }
+        if (!username || !email || !password || !confirm_password) {
+          alert('All fields must be filled!');
+          return;
+        } else {
+          this.props.history.push('/login');
+        }
       })
       .catch((error) => {
         console.log('Error occured: ' + error);
@@ -65,10 +74,10 @@ class Register extends React.Component {
             </div>
             <div className="inputBox">
               <input
+                onChange={this.handleChange}
                 type="password"
                 name="password"
                 autocomplete="off"
-                onChange={this.handleChange}
               />
               <label for="password">Password</label>
             </div>

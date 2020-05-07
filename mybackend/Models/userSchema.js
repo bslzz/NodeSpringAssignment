@@ -6,23 +6,22 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    index: { unique: true, dropDups: true },
+    unique: true,
   },
 
   email: {
     type: String,
     unique: true,
+    lowercase: true,
+    required: true,
   },
+
   password: {
     type: String,
     required: true,
   },
 
-  confirm_password: {
-    type: String,
-  },
-
-  date: {
+  register_date: {
     type: Date,
     default: Date.now,
   },

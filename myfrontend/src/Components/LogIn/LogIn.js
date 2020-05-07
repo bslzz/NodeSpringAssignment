@@ -18,7 +18,7 @@ class LogIn extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted');
+
     const { username, password } = this.state;
     axios({
       url: '/login',
@@ -29,11 +29,16 @@ class LogIn extends React.Component {
       },
     })
       .then((response) => {
-        this.props.history.push('/');
+        if (!username || !password) {
+          alert('Username and password required');
+          return;
+        } else {
+          this.props.history.push('/');
+        }
       })
       .catch((error) => {
         this.setState({
-          errorMessage: error.response.data.message,
+          errorMessage: error.message,
         });
       });
   };
@@ -42,13 +47,13 @@ class LogIn extends React.Component {
     return (
       <div className="main_div">
         <div className="box">
-          <h1>Login Form</h1>
+          <h1>Login</h1>
           <form>
             <div className="inputBox">
               <input
-                type="text"
+                type="username"
                 name="username"
-                autocomplete="off"
+                autoComplete="off"
                 onChange={this.handleChange}
               />
               <label for="username">Username</label>
@@ -57,14 +62,17 @@ class LogIn extends React.Component {
               <input
                 type="password"
                 name="password"
-                autocomplete="off"
+                autoComplete="off"
                 onChange={this.handleChange}
               />
               <label for="password">Password</label>
             </div>
             <input onClick={this.handleSubmit} type="submit" value="login" />
           </form>
-          <h1>{this.state.errorMessage}</h1>
+          <p style={{ color: 'red', marginTop: '10px' }}>
+            {' '}
+            {this.state.errorMessage}
+          </p>
         </div>
       </div>
     );

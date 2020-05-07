@@ -19,7 +19,7 @@
 }
 
 .box h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
   color: #fff;
   text-align: center;
   text-transform: capitalize;
@@ -32,7 +32,7 @@
 .box .inputBox input {
   width: 100%;
   padding: 10px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   letter-spacing: 1px;
   margin-bottom: 2rem;
@@ -44,14 +44,13 @@
 
 .box .inputBox label {
   position: absolute;
-  top: 0;
+  top: -25px;
   left: 0;
   letter-spacing: 1px;
   padding: 10px 0;
   font-size: 1.2rem;
-  color: #fff;
-  transition: 0.5s;
-  pointer-events: none;
+  color: #03a9f4;
+  transition: 0.4s;
 }
 
 .box input[type='submit'] {
@@ -66,12 +65,4 @@
   cursor: pointer;
   text-transform: capitalize;
   letter-spacing: 1px;
-}
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label {
-  top: -25px;
-  left: 0;
-  color: #03a9f4;
-  font-size: 1.1rem;
 }
