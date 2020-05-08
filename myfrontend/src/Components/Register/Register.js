@@ -31,7 +31,7 @@ class Register extends React.Component {
         confirm_password,
       },
     })
-      .then((response) => {
+      .then(() => {
         if (password !== confirm_password) {
           alert('Passwords not matched!');
           return;
@@ -39,9 +39,7 @@ class Register extends React.Component {
         if (!username || !email || !password || !confirm_password) {
           alert('All fields must be filled!');
           return;
-        } else {
-          this.props.history.push('/login');
-        }
+        } else this.props.history.push('/login');
       })
       .catch((error) => {
         console.log('Error occured: ' + error);
@@ -91,6 +89,9 @@ class Register extends React.Component {
               <label for="confirm_password">Confirm Password</label>
             </div>
             <input type="submit" value="register" />
+            <p className="signup">
+              Already have an account? <a href="/login">Login</a>
+            </p>
           </form>
         </div>
       </div>

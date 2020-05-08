@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import './LandingPage.css';
 
 class LandingPage extends React.Component {
   clickHandler = (e) => {
@@ -10,22 +9,21 @@ class LandingPage extends React.Component {
       url: '/logout',
       method: 'POST',
     })
-      .then((response, next) => {
+      .then((response) => {
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.removeItem('isAuthenticated', isAuthenticated);
         this.props.history.push('/login');
       })
       .catch((error) => {
-        console.log({ msg: 'ThankGod' + error });
-        return;
+        console.log({ msg: 'You have logged out with an error:' + error });
       });
   };
   render() {
     return (
-      <div>
+      <div className="landingpage">
         <h1>Welcome to the landing page</h1>
-        <p>Logged in as: {}</p>
-        <a onClick={this.clickHandler} href="/logout">
+        <p className="loggedin-user">Logged in as: {}</p>
+        <a className="logout" onClick={this.clickHandler} href="/logout">
           Log out
         </a>
       </div>

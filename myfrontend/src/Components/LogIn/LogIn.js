@@ -1,7 +1,6 @@
 import React from 'react';
 import './LogIn.css';
 import axios from 'axios';
-import { Redirect, Link } from 'react-router-dom';
 
 class LogIn extends React.Component {
   // the states that are required to log in
@@ -9,10 +8,6 @@ class LogIn extends React.Component {
   state = {
     username: '',
     password: '',
-
-    //error message kept empty so that it can be set to display error messages
-
-    errorMessage: '',
   };
 
   handleSubmit = (e) => {
@@ -33,11 +28,9 @@ class LogIn extends React.Component {
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
       })
       .catch((error) => {
-        this.setState({
-          //This shows the message from backend (server message)
+        console.log(error.response.data.message);
 
-          errorMessage: error.response.data.message,
-        });
+        //This shows the message from backend (server message)
       });
   };
 
@@ -73,10 +66,10 @@ class LogIn extends React.Component {
               <label for="password">Password</label>
             </div>
             <input onClick={this.handleSubmit} type="submit" value="login" />
+            <p className="signup">
+              Don't have an account? <a href="/register">Signup</a>
+            </p>
           </form>
-          {/* <p style={{ color: 'red', marginTop: '10px' }}>
-            {this.state.errorMessage}
-          </p> */}
         </div>
       </div>
     );
