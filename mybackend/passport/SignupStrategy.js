@@ -1,7 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../Models/userSchema');
 const bcrypt = require('bcrypt');
-
 const salt = bcrypt.genSaltSync(10);
 
 const RegisterStrategy = new LocalStrategy(
@@ -31,7 +30,7 @@ const RegisterStrategy = new LocalStrategy(
               null
             );
           } else {
-            console.log('New user registered in DB');
+            console.log('New user registered to the DB');
             return done(null, addeduser);
           }
         });

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const passport = require('../passport');
 
 //passport authentication callback
@@ -8,14 +7,26 @@ const passport = require('../passport');
 router.post('/register', (req, res, next) => {
   passport.authenticate(
     'local-signup',
-    { successRedirect: '/login', failureRedirect: '/register' },
+
     function (error, user) {
       if (error) {
         return res.status(500).json({
           message: error || 'Internal server error',
         });
       }
-      return res.json(user);
+
+      //persistent login
+      req.login(user, (error) => {
+        if (error) {
+          return res.status(500).json({
+            message: error || 'Internal server error',
+          });
+        }
+
+        //to make sure that react knows that this user is authenticated
+        user.isAuthenticated = true;
+        return res.json(user);
+      });
     }
   )(req, res, next);
 });
@@ -23,16 +34,42 @@ router.post('/register', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate(
     'local-signin',
-    { successRedirect: '/', failureRedirect: '/login' },
+
     function (error, user) {
       if (error) {
         return res.status(500).json({
-          message: error || 'Internal server error',
+          message: error || 'Server error',
         });
       }
-      return res.json(user);
+
+      //persistent login
+      req.login(user, (error) => {
+        if (error) {
+          return res.status(500).json({
+            message: error || 'Internal server error',
+          });
+        }
+        //to make sure that react knows that this user is authenticated
+        user.isAuthenticated = true;
+        return res.json(user);
+      });
     }
   )(req, res, next);
+});
+
+router.post('/logout', (req, res) => {
+  if (req.user) {
+    req.session.destroy();
+    req.logout();
+
+    return res.json({ msg: 'logging you out' });
+  } else {
+    return res.json({ msg: 'no user to log out!' });
+  }
+});
+
+router.get('/api', (req, res) => {
+  res.json({ msg: 'Hello from server' });
 });
 
 module.exports = router;

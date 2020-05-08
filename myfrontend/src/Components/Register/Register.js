@@ -32,7 +32,7 @@ class Register extends React.Component {
       },
     })
       .then((response) => {
-        if (password != confirm_password) {
+        if (password !== confirm_password) {
           alert('Passwords not matched!');
           return;
         }
