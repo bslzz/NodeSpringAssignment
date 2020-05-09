@@ -14,6 +14,10 @@ class LogIn extends React.Component {
     e.preventDefault();
 
     const { username, password } = this.state;
+    if (!username || !password) {
+      alert('All fields are mandatory');
+    }
+
     axios({
       url: '/login',
       method: 'POST',
@@ -42,6 +46,10 @@ class LogIn extends React.Component {
   };
 
   render() {
+    const isAuthenticated = window.localStorage.getItem('isAuthenticated');
+    if (!isAuthenticated) {
+      window.localStorage.removeItem('isAuthenticated');
+    }
     return (
       <div className="main_div">
         <div className="box">

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './LandingPage.css';
+import { Container } from 'react-bootstrap';
 
 class LandingPage extends React.Component {
   clickHandler = (e) => {
@@ -12,7 +13,9 @@ class LandingPage extends React.Component {
       .then((response) => {
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.removeItem('isAuthenticated', isAuthenticated);
-        this.props.history.push('/login');
+
+        this.props.history.push('/');
+        return false;
       })
       .catch((error) => {
         console.log({ msg: 'You have logged out with an error:' + error });
@@ -20,13 +23,15 @@ class LandingPage extends React.Component {
   };
   render() {
     return (
-      <div className="landingpage">
-        <h1>Welcome to the landing page</h1>
-        <p className="loggedin-user">Logged in as: {}</p>
-        <a className="logout" onClick={this.clickHandler} href="/logout">
-          Log out
-        </a>
-      </div>
+      <Container>
+        <div className="landingpage">
+          <h1>Welcome to the landing page</h1>
+
+          <a className="logout" onClick={this.clickHandler} href="/logout">
+            Log out
+          </a>
+        </div>
+      </Container>
     );
   }
 }

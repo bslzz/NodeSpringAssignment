@@ -1,10 +1,4 @@
 .landingpage {
-  background-color: #49d176;
-  background-image: linear-gradient(
-    rgba(10, 100, 240, 0.25),
-    rgba(50, 20, 290, 0.45)
-  );
-  padding: 1rem;
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -12,20 +6,19 @@
 }
 .landingpage h1 {
   font-size: 5rem;
+  text-align: center;
 }
 
-.loggedin-user {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
 .logout {
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 4%;
+  right: 1%;
   font-size: 1.2rem;
+  color: #000;
   text-decoration: none;
-  color: blue;
+  transition: 0.3s linear;
+}
+.logout:hover {
+  color: rgb(3, 27, 248);
+  text-decoration: none;
 }

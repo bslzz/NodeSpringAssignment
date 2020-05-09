@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
 .homepage {
-  background-color: #49d176;
-  background-image: linear-gradient(
-    rgba(10, 100, 240, 0.25),
-    rgba(50, 20, 290, 0.45)
-  );
   padding: 1rem;
   min-height: 100vh;
   font-family: 'MedievalSharp', cursive;
@@ -14,7 +9,7 @@
 .homepage h1 {
   text-align: center;
   padding: 2rem 0;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .gamelogo {
@@ -22,13 +17,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 65vh;
+  min-height: 40vh;
 }
 
 .logo {
   border-radius: 10%;
-  height: 300px;
-  width: 350px;
+  height: 250px;
+  width: 300px;
 }
 
 .links {
@@ -39,10 +34,25 @@
 
 .link1,
 .link2 {
-  color: rgb(241, 9, 9);
+  color: rgb(226, 241, 9);
   text-decoration: none;
+  transition: 0.3s linear;
 }
 
 .link1 {
   margin-right: 2rem;
+}
+.link1:hover,
+.link2:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+.far.userplus,
+.far.user {
+  color: rgb(251, 255, 0);
+  font-size: 1.4rem;
+}
+.far.userplus {
+  margin-right: 5px;
 }
