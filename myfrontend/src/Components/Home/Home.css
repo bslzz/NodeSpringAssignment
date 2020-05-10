@@ -37,22 +37,27 @@
   color: rgb(226, 241, 9);
   text-decoration: none;
   transition: 0.3s linear;
+  display: inline-block;
 }
 
-.link1 {
-  margin-right: 2rem;
-}
 .link1:hover,
 .link2:hover {
-  color: blue;
   text-decoration: none;
+  color: orange;
 }
 
 .far.userplus,
 .far.user {
   color: rgb(251, 255, 0);
   font-size: 1.4rem;
-}
-.far.userplus {
   margin-right: 5px;
+}
+
+.login-button {
+  margin-right: 1rem;
+}
+
+.login-button,
+.register-button {
+  margin-top: 1.5rem;
 }
