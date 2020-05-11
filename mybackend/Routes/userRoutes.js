@@ -57,20 +57,19 @@ router.post('/login', (req, res, next) => {
   )(req, res, next);
 });
 
-// router.post('/logout', (req, res) => {
-//
 router.post('/logout', (req, res) => {
   if (req.user) {
     req.logout();
     req.session.destroy((err) => {
       res.clearCookie('connect.sid');
-      // Don't redirect, just print text
       res.send('Logged out');
     });
   } else {
     return res.json({ msg: 'no user to log out!' });
   }
 });
+
+//just for testing  purpose
 
 router.get('/api', (req, res) => {
   res.json({ msg: 'Hello from server' });

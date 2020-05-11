@@ -8,3 +8,8 @@
   line-height: 2;
   letter-spacing: 1px;
 }
+@media (max-width: 770px) {
+  .instructions h1 {
+    font-size: 2rem;
+  }
+}
