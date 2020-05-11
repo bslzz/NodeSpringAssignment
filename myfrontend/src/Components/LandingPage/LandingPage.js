@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './LandingPage.css';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class LandingPage extends React.Component {
   clickHandler = (e) => {
@@ -27,9 +28,13 @@ class LandingPage extends React.Component {
         <div className="landingpage">
           <h1>Welcome to the landing page</h1>
 
-          <a className="logout" onClick={this.clickHandler} href="/logout">
-            Log out
-          </a>
+          <Link
+            className="nav-link logout"
+            to="/logout"
+            onClick={this.clickHandler}
+          >
+            LogOut
+          </Link>
         </div>
       </Container>
     );

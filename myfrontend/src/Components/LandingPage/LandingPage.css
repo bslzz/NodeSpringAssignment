@@ -2,7 +2,6 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  position: relative;
 }
 .landingpage h1 {
   font-size: 5rem;
@@ -11,14 +10,17 @@
 
 .logout {
   position: absolute;
-  top: 4%;
-  right: 1%;
+  top: 2.5%;
+  right: 30%;
   font-size: 1.2rem;
-  color: #000;
+  font-family: 'MedievalSharp', cursive;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2c2c2c;
   text-decoration: none;
   transition: 0.3s linear;
 }
 .logout:hover {
-  color: rgb(3, 27, 248);
+  color: #2c2c2c;
   text-decoration: none;
 }
