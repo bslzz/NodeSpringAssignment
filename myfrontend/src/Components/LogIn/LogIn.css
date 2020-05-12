@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.main_div {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.box {
+  width: 380px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+.box h1 {
+  margin-bottom: 2.2rem;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.box .inputBox {
+  position: relative;
+}
+
+.box .inputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.12rem;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.box .inputBox input:focus ~ label {
+  top: -25px;
+  font-size: 1.2rem;
+}
+
+.box .inputBox label {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  color: #03a9f4;
+  transition: 0.6s;
+  pointer-events: none;
+}
+
+.box input[type='submit'] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #03a9f4;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.signup {
+  color: #fff;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+.signup a {
+  color: rgb(255, 60, 0);
+  transition: 0.3s linear;
+  text-decoration: none;
+}
+.signup a:hover {
+  color: orange;
+}
