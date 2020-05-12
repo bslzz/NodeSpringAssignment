@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+
+$font-family-sans-serif: 'Nunito';
+$primary: #f2c46d;
+$secondary: #03a678;
+$body-bg: #02735e;
+
+$border-radius: 1rem;
+$border-radius-lg: 1rem;
+
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1rem;
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 2rem;
+
+$custom-control-indicator-checked-bg: $secondary;
+$custom-control-indicator-focus-box-shadow: none;
+$custom-control-indicator-focus-border-color: none;
+
+$progress-height: 0.5rem;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+	border: none;
+
+	.card-body {
+		.card-title {
+			font-size: 1rem;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		.card-subtitle {
+			font-size: 1.5rem;
+			font-weight: 700;
+		}
+	}
+}
+
+.custom-control {
+	margin-bottom: 0.25 rem;
+	.custom-control-label {
+		padding-left: 0.25rem;
+	}
+}
+
+@media (min-width: 768px) {
+	#start {
+		width: 750px;
+	}
+
+	.card {
+		width: 625px;
+
+		.card-body {
+			padding: 2rem 3rem;
+		}
+	}
+
+	.input-group {
+		width: 75%;
+		margin: 0 auto;
+	}
+}
+
+.form-check-input input[type='radio']:checked + label {
+	background-color: #bfb;
+	border-color: #4c4;
+}
