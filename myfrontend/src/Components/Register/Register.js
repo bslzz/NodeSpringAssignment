@@ -21,6 +21,12 @@ class Register extends React.Component {
     e.preventDefault();
 
     const { username, email, password, confirm_password } = this.state;
+    if (!username || !password || !email || !confirm_password) {
+      alert('All fields are mandatory');
+    }
+    if (password !== confirm_password) {
+      alert('Passwords not matched');
+    }
     axios({
       url: '/register',
       method: 'POST',
@@ -32,14 +38,7 @@ class Register extends React.Component {
       },
     })
       .then(() => {
-        if (password !== confirm_password) {
-          alert('Passwords not matched!');
-          return;
-        }
-        if (!username || !email || !password || !confirm_password) {
-          alert('All fields must be filled!');
-          return;
-        } else this.props.history.push('/login');
+        this.props.history.push('/login');
       })
       .catch((error) => {
         console.log('Error occured: ' + error);
