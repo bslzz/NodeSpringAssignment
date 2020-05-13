@@ -11,6 +11,14 @@ import Footer from './Components/Footer/Footer';
 import Instructions from './Components/Instructions/Instructions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Codes added
+
+import StartQuiz from "./Components/StartQuiz";
+import Quiz from "./Components/Quiz";
+import Result from "./Components/Result";
+
+//End of added codes
+
 const App = () => {
   return (
     <div className="finalcontent">
@@ -23,6 +31,13 @@ const App = () => {
           <Route path="/myquiz" component={LandingPage}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/instructions" component={Instructions}></Route>
+
+          <Route exact path="/" component={StartQuiz}></Route>
+          <Route path="/quiz" component={Quiz}></Route>
+          <Route path="/result" component={Result}></Route>
+          <Redirect to="/" />
+
+          
         </Switch>
         <Footer />
       </Router>
