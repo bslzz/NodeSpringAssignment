@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('../passport');
+const User = require('../Models/userSchema');
 
 //passport authentication callback
 
@@ -73,6 +74,10 @@ router.post('/logout', (req, res) => {
 
 router.get('/api', (req, res) => {
   res.json({ msg: 'Hello from server' });
+});
+
+router.get('/api/getdbdata', (req, res) => {
+  User.find().then((data) => res.send(data));
 });
 
 module.exports = router;
