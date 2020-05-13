@@ -14,28 +14,25 @@ class LogIn extends React.Component {
     e.preventDefault();
 
     const { username, password } = this.state;
-    if (!username || !password) {
-      alert('All fields are mandatory');
-    }
 
-    axios({
-      url: '/login',
-      method: 'POST',
-      data: {
-        username,
-        password,
-      },
-    })
-      .then((response) => {
-        this.props.history.push('/myquiz');
-        const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.setItem('isAuthenticated', isAuthenticated);
-      })
-      .catch((error) => {
-        console.log(error.response.data.message);
-
-        //This shows the message from backend (server message)
-      });
+    !username || !password
+      ? alert('All fields are mandatory')
+      : axios({
+          url: '/login',
+          method: 'POST',
+          data: {
+            username,
+            password,
+          },
+        })
+          .then((response) => {
+            this.props.history.push('/myquiz');
+            const isAuthenticated = response.data.isAuthenticated;
+            window.localStorage.setItem('isAuthenticated', isAuthenticated);
+          })
+          .catch((error) => {
+            alert('User not found. ' + error.message);
+          });
   };
 
   handleChange = (e) => {
