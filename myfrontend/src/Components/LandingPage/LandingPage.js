@@ -35,6 +35,8 @@ class LandingPage extends React.Component {
           >
             LogOut
           </Link>
+
+          
         </div>
       </Container>
     );

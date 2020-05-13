@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Parser from "html-react-parser";
+import Parser from "react-html-parser";
 
 class AnswerOptions extends Component {
   state = {

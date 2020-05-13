@@ -24,6 +24,7 @@ const App = () => {
     <div className="finalcontent">
       <Router>
         <NavHeader />
+        <StartQuiz />
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/login" component={LogIn}></Route>
@@ -32,10 +33,10 @@ const App = () => {
           <Route path="/about" component={About}></Route>
           <Route path="/instructions" component={Instructions}></Route>
 
-          <Route exact path="/" component={StartQuiz}></Route>
+          
           <Route path="/quiz" component={Quiz}></Route>
           <Route path="/result" component={Result}></Route>
-          <Redirect to="/" />
+      
 
           
         </Switch>

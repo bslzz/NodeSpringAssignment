@@ -1,5 +1,5 @@
 import React from "react";
-import Parser from "html-react-parser";
+import Parser from "react-html-parser";
 import ProgressBar from "./ProgressBar";
 import AnswerOptions from "./AnswerOptions";
 
