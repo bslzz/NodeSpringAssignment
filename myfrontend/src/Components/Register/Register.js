@@ -21,28 +21,27 @@ class Register extends React.Component {
     e.preventDefault();
 
     const { username, email, password, confirm_password } = this.state;
-    if (!username || !password || !email || !confirm_password) {
-      alert('All fields are mandatory');
-    }
-    if (password !== confirm_password) {
-      alert('Passwords not matched');
-    }
-    axios({
-      url: '/register',
-      method: 'POST',
-      data: {
-        username,
-        email,
-        password,
-        confirm_password,
-      },
-    })
-      .then(() => {
-        this.props.history.push('/login');
-      })
-      .catch((error) => {
-        console.log('Error occured: ' + error);
-      });
+
+    !username || !password || !email || !confirm_password
+      ? alert('All fields are mandatory')
+      : password !== confirm_password
+      ? alert('Passwords not matched')
+      : axios({
+          url: '/register',
+          method: 'POST',
+          data: {
+            username,
+            email,
+            password,
+            confirm_password,
+          },
+        })
+          .then(() => {
+            this.props.history.push('/login');
+          })
+          .catch((error) => {
+            console.log('Error occured: ' + error);
+          });
   };
 
   render() {

@@ -7,20 +7,26 @@ import { Link } from 'react-router-dom';
 class LandingPage extends React.Component {
   clickHandler = (e) => {
     e.preventDefault();
-    axios({
-      url: '/logout',
-      method: 'POST',
-    })
-      .then((response) => {
-        const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.removeItem('isAuthenticated', isAuthenticated);
+    const result = window.confirm('Are you sure you want to log out?');
 
-        this.props.history.push('/');
-        return false;
-      })
-      .catch((error) => {
-        console.log({ msg: 'You have logged out with an error:' + error });
-      });
+    result
+      ? axios({
+          url: '/logout',
+          method: 'POST',
+        })
+          .then((response) => {
+            const isAuthenticated = response.data.isAuthenticated;
+            window.localStorage.removeItem('isAuthenticated', isAuthenticated);
+
+            this.props.history.push('/');
+            return false;
+          })
+          .catch((error) => {
+            console.log({
+              msg: 'You have logged out with an error:' + error,
+            });
+          })
+      : console.log('Not logged out');
   };
   render() {
     return (
