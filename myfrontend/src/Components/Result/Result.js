@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { ResultAnswers as Answers } from './ResultAnswers';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import './Result.css';
@@ -22,6 +22,9 @@ const Result = (props) => {
     <Redirect to="/spinner" />
   ) : (
     <>
+      <Link to="/" className="nav-link logout">
+        Logout
+      </Link>
       <section className="container resultbox">
         <div className="card mb-5 shadow-sm">
           <div className="card-body mainresult">

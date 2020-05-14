@@ -19,7 +19,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   session({ secret: 'cats', resave: 'false', saveUninitialized: 'false' })
 );
-
 initMongoose(mongoose);
 
 app.use(passport.initialize());

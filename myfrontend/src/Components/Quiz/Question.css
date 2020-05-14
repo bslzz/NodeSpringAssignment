@@ -16,3 +16,19 @@
 .mainquestion:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
+.logout {
+  position: absolute;
+  top: 3%;
+  right: 33%;
+  font-size: 1rem;
+  font-family: 'MedievalSharp', cursive;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+.logout:hover {
+  color: #2c2c2c;
+  text-decoration: none;
+}

@@ -3,6 +3,7 @@ import Parser from 'html-react-parser';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import AnswerOptions from '../AnswerOptions/AnswerOptions';
 import './Question.css';
+import { Link } from 'react-router-dom';
 
 const Question = (props) => {
   const { question, incorrect_answers, correct_answer } = props.question;
@@ -11,6 +12,9 @@ const Question = (props) => {
 
   return (
     <>
+      <Link to="/" className="nav-link logout">
+        Logout
+      </Link>
       <div className="container questionbox">
         <div className="card m-5 shadow-sm">
           <div className="card-body mainquestion">

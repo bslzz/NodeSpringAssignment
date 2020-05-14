@@ -76,6 +76,9 @@ class Quiz extends Component {
     };
 
     if (quizOver) {
+      let audio = new Audio('/assets/quizresult.mp3');
+      audio.play();
+
       return <Redirect to={redirectObj} />;
     }
 

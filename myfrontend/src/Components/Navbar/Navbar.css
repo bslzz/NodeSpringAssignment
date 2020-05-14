@@ -12,3 +12,10 @@
   text-transform: uppercase;
   font-weight: 900;
 }
+
+.far.music {
+  font-size: 1.2rem;
+  height: 2.6rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}

@@ -1,9 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
+
+// const clickHandler = (e) => {
+//   e.preventDefault();
+//   const result = window.confirm('Are you sure you want to log out?');
+
+//   result
+//     ? axios({
+//         url: '/logout',
+//         method: 'GET',
+//       })
+//         .then((response) => {
+//           this.props.history.push('/');
+//           const isAuthenticated = response.data.isAuthenticated;
+//           window.localStorage.removeItem('isAuthenticated', isAuthenticated);
+//         })
+//         .catch((error) => {
+//           console.log({
+//             msg: 'You have logged out with an error:' + error,
+//           });
+//         })
+//     : console.log('Not logged out');
+// };
+const useAudio = () => {
+  const [audio] = useState(new Audio('/assets/bensound-littleidea.mp3'));
+  const [playing, setPlaying] = useState(false);
+  const toggle = () => setPlaying(!playing);
+
+  useEffect(() => {
+    playing ? audio.play() : audio.pause();
+  });
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(false));
+    };
+  });
+
+  return [playing, toggle];
+};
 
 const NavHeader = () => {
+  const [playing, toggle] = useAudio('/assets/bensound-littleidea.mp3');
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar mainNav">
       <Container>
@@ -22,10 +65,16 @@ const NavHeader = () => {
             <Link to="/about" className="nav-link">
               About
             </Link>
-
             <Link to="/instructions" className="nav-link">
               How to play?
             </Link>
+            <FontAwesomeIcon
+              onClick={toggle}
+              className="far music"
+              icon={faMusic}
+            >
+              {playing ? 'Pause' : 'Play'}
+            </FontAwesomeIcon>
           </Nav>
         </Navbar.Collapse>
       </Container>

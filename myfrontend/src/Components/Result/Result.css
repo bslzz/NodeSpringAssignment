@@ -3,9 +3,10 @@
 .resultbox {
   border: none;
   outline: none;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 .mainresult {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
@@ -16,4 +17,20 @@
 }
 .mainresult:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+.logout {
+  position: absolute;
+  top: 3%;
+  right: 33%;
+  font-size: 1rem;
+  font-family: 'MedievalSharp', cursive;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+.logout:hover {
+  color: #2c2c2c;
+  text-decoration: none;
 }

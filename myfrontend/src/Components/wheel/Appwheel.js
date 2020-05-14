@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './Appwheel.css';
 
 export default class Wheel extends React.Component {
@@ -46,6 +46,9 @@ export default class Wheel extends React.Component {
       <Redirect to={redirectObj} />
     ) : (
       <>
+        <Link to="/" className="nav-link logout">
+          Logout
+        </Link>
         <div className="mainspinner">
           <div className="wheel-container">
             <div onClick={this.selectItem} className="spin">
