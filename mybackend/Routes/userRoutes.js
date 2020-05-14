@@ -58,15 +58,15 @@ router.post('/login', (req, res, next) => {
   )(req, res, next);
 });
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.user) {
     req.logout();
-    req.session.destroy((err) => {
+    req.session.destroy(() => {
       res.clearCookie('connect.sid');
-      res.send('Logged out');
     });
+    res.redirect('/');
   } else {
-    return res.json({ msg: 'no user to log out!' });
+    console.log({ msg: 'No user' });
   }
 });
 
