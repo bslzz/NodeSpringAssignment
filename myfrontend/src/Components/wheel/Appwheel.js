@@ -1,7 +1,6 @@
 import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './Appwheel.css';
-import axios from 'axios';
 
 export default class Wheel extends React.Component {
   constructor(props) {
@@ -22,30 +21,6 @@ export default class Wheel extends React.Component {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 2000);
     }
-  };
-
-  clickHandler = (e) => {
-    e.preventDefault();
-    const result = window.confirm('Are you sure you want to log out?');
-
-    result
-      ? axios({
-          url: '/logout',
-          method: 'POST',
-        })
-          .then((response) => {
-            const isAuthenticated = response.data.isAuthenticated;
-            window.localStorage.removeItem('isAuthenticated', isAuthenticated);
-
-            this.props.history.push('/');
-            return false;
-          })
-          .catch((error) => {
-            console.log({
-              msg: 'You have logged out with an error:' + error,
-            });
-          })
-      : console.log('Not logged out');
   };
 
   render() {
@@ -70,31 +45,26 @@ export default class Wheel extends React.Component {
     return selectedItem ? (
       <Redirect to={redirectObj} />
     ) : (
-      <div className="mainspinner">
-        <div className="wheel-container">
-          <div onClick={this.selectItem} className="spin">
-            <div className="inner_spin"></div>
-          </div>
-          <div className={`wheel ${spinning}`} style={wheelVars}>
-            {items.map((item, index) => (
-              <div
-                className="wheel-item"
-                key={index}
-                style={{ '--item-nb': index }}
-              >
-                {item}
-              </div>
-            ))}
+      <>
+        <div className="mainspinner">
+          <div className="wheel-container">
+            <div onClick={this.selectItem} className="spin">
+              <div className="inner_spin"></div>
+            </div>
+            <div className={`wheel ${spinning}`} style={wheelVars}>
+              {items.map((item, index) => (
+                <div
+                  className="wheel-item"
+                  key={index}
+                  style={{ '--item-nb': index }}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <Link
-          className="nav-link logout"
-          to="/logout"
-          onClick={this.clickHandler}
-        >
-          LogOut
-        </Link>
-      </div>
+      </>
     );
   }
 }

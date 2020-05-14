@@ -1,33 +1,8 @@
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { ResultAnswers as Answers } from './ResultAnswers';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import axios from 'axios';
 import './Result.css';
-
-const clickHandler = (e) => {
-  e.preventDefault();
-  const result = window.confirm('Are you sure you want to log out?');
-
-  result
-    ? axios({
-        url: '/logout',
-        method: 'POST',
-      })
-        .then((response) => {
-          const isAuthenticated = response.data.isAuthenticated;
-          window.localStorage.removeItem('isAuthenticated', isAuthenticated);
-
-          this.props.history.push('/');
-          return false;
-        })
-        .catch((error) => {
-          console.log({
-            msg: 'You have logged out with an error:' + error,
-          });
-        })
-    : console.log('Not logged out');
-};
 
 const Result = (props) => {
   const [showAnswers, setShowAnswers] = useState(false);
@@ -44,7 +19,7 @@ const Result = (props) => {
   };
 
   return newGame ? (
-    <Redirect to="/" />
+    <Redirect to="/spinner" />
   ) : (
     <>
       <section className="container resultbox">
@@ -72,9 +47,6 @@ const Result = (props) => {
           </div>
         </div>
       </section>
-      <Link className="nav-link logout" to="/logout" onClick={clickHandler}>
-        LogOut
-      </Link>
     </>
   );
 };

@@ -59,15 +59,11 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/logout', (req, res) => {
-  if (req.user) {
-    req.logout();
-    req.session.destroy((err) => {
-      res.clearCookie('connect.sid');
-      res.send('Logged out');
-    });
-  } else {
-    return res.json({ msg: 'no user to log out!' });
-  }
+  req.logout();
+  res.redirect('/');
+  // req.session.destroy((err) => {
+  //   res.clearCookie('connect.sid');
+  // });
 });
 
 //just for testing  purpose

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
-
 import NavHeader from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Footer from './Components/Footer/Footer';

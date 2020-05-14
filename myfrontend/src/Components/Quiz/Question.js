@@ -3,32 +3,6 @@ import Parser from 'html-react-parser';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import AnswerOptions from '../AnswerOptions/AnswerOptions';
 import './Question.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-
-const clickHandler = (e) => {
-  e.preventDefault();
-  const result = window.confirm('Are you sure you want to log out?');
-
-  result
-    ? axios({
-        url: '/logout',
-        method: 'POST',
-      })
-        .then((response) => {
-          const isAuthenticated = response.data.isAuthenticated;
-          window.localStorage.removeItem('isAuthenticated', isAuthenticated);
-
-          this.props.history.push('/');
-          return false;
-        })
-        .catch((error) => {
-          console.log({
-            msg: 'You have logged out with an error:' + error,
-          });
-        })
-    : console.log('Not logged out');
-};
 
 const Question = (props) => {
   const { question, incorrect_answers, correct_answer } = props.question;
@@ -53,9 +27,6 @@ const Question = (props) => {
           </div>
         </div>
       </div>
-      <Link className="nav-link logout" to="/logout" onClick={clickHandler}>
-        LogOut
-      </Link>
       ;
     </>
   );
