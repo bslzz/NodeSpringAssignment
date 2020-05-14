@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap');
+
+.questionbox {
+  border: none;
+  outline: none;
+  min-height: 100vh;
+}
+
+.mainquestion {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  background: rgb(250, 171, 51);
+  border: none;
+  outline: none;
+  font-family: 'Muli', sans-serif;
+}
+.mainquestion:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}

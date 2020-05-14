@@ -1,8 +1,8 @@
 {
-  "name": "NodeSpringAssignment",
+  "name": "mastermindquiz",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "quiz app using node, react and mongodb",
+  "main": "app.js.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "myfrontend": "cd myfrontend && npm start",
