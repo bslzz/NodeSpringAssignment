@@ -19,7 +19,7 @@ const Result = (props) => {
   };
 
   return newGame ? (
-    <Redirect to="/spinner" />
+    <Redirect to="/category" />
   ) : (
     <>
       <Link to="/" className="nav-link logout">

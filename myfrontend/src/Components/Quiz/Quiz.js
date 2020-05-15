@@ -18,8 +18,8 @@ class Quiz extends Component {
   }
 
   getQuestions = () => {
-    const id = this.props.location.state ? this.props.location.state.id : '';
-    const url = `https://opentdb.com/api.php?amount=20&category=${id}&easy=difficulty&type=multiple`;
+    const id = this.props.location.state ? this.props.location.state.id : 9;
+    const url = `https://opentdb.com/api.php?amount=10&category=${id}&easy=difficulty&type=multiple`;
     axios
       .get(url)
       .then((response) => {

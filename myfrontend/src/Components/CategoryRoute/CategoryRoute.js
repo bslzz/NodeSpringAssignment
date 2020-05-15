@@ -1,12 +1,11 @@
 import React from 'react';
-import Wheel from '../wheel/Appwheel';
-import './indexwheel.css';
+import Category from '../Category/Category';
+import './CategoryRoute.css';
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = [
-      'General Knowledge',
       'Science',
       'Maths',
       'Video Games',
@@ -16,6 +15,7 @@ export class App extends React.Component {
       'Entertainment',
       'Sports',
       'Movies',
+      'General Knowledge',
     ];
   }
 
@@ -23,7 +23,7 @@ export class App extends React.Component {
     const listitems = this.state;
     return (
       <div className="App">
-        <Wheel items={listitems} />
+        <Category items={listitems} />
       </div>
     );
   }
