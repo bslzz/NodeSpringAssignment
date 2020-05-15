@@ -1,25 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .categorylist {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #fff;
 }
 
 .categorylist h1 {
   margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important;
+  border: 0;
   background: #5c6664;
   background-image: none;
   flex: 1;
@@ -27,11 +28,9 @@ select {
   color: #fff;
   cursor: pointer;
   font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-select::-ms-expand {
-  display: none;
-}
+
 .select {
   position: relative;
   display: flex;
@@ -41,6 +40,7 @@ select::-ms-expand {
   background: #5c6664;
   overflow: hidden;
   border-radius: 0.25em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 .select::after {
   content: '\25BC';
@@ -58,4 +58,7 @@ select::-ms-expand {
 }
 .start {
   margin-top: 2rem;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }

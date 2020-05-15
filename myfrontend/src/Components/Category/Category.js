@@ -53,7 +53,7 @@ class Category extends Component {
       <Redirect to={redirectObj} />
     ) : (
       <div className="categorylist">
-        <h1>Welcome to quiz heaven</h1>
+        <h1>Choose any category and get started.</h1>
         <div class="select">
           <select name="format" id="format" onChange={this.handleChange}>
             <option defaultValue>Choose a category...</option>
