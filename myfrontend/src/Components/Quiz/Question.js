@@ -12,12 +12,15 @@ const Question = (props) => {
   options.sort(() => 0.5 - Math.random());
 
   return (
-    <>
+    <div className="questionpage">
       <Link to="/" className="nav-link logout">
         Logout
       </Link>
       <div className="container questionbox">
-        <div className="card m-5 shadow-sm">
+        <div
+          style={{ border: 'none', outline: 'none' }}
+          className="card m-5 shadow-sm"
+        >
           <div className="card-body mainquestion">
             <h2 className="card-title text-muted">
               {props.category} Quiz | Question {props.number + 1}
@@ -33,7 +36,7 @@ const Question = (props) => {
         </div>
       </div>
       ;
-    </>
+    </div>
   );
 };
 

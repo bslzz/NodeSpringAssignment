@@ -8,6 +8,24 @@
   line-height: 2;
   letter-spacing: 1px;
 }
+.lists {
+  margin-top: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.fas.hand {
+  color: rgb(78, 78, 71);
+  margin-right: 1rem;
+  font-size: x-small;
+}
+
 @media (max-width: 770px) {
   .instructions h1 {
     font-size: 2rem;
