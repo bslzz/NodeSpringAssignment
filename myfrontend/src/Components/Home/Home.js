@@ -10,7 +10,7 @@ const Home = () => {
     <div className="homepage">
       <div className="gamelogo">
         <h1>Welcome to MasterMind</h1>
-        <img className="logo" src="assets/MasterMind-logo.png" alt="gamelogo" />
+        <img className="logo" src="assets/logo.png" alt="gamelogo" />
         <div className="links">
           <Button className="btn btn-dark btn-lg login-button">
             <Link className="link1" to="/login">
