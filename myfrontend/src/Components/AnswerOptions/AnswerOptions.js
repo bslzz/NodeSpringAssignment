@@ -3,7 +3,7 @@ import Parser from 'html-react-parser';
 
 class AnswerOptions extends Component {
   state = {
-    answer: '',
+    answer: ''
   };
 
   checkAnswer = (e) => {

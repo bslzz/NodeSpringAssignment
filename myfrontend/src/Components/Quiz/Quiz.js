@@ -11,11 +11,14 @@ class Quiz extends Component {
     current: 0,
     score: 0,
     quizOver: false,
+    time: {}
   };
 
   componentDidMount() {
     this.getQuestions();
+    this.setTimer();
   }
+
 
   getQuestions = () => {
     const id = this.props.location.state ? this.props.location.state.id : '';
@@ -36,6 +39,40 @@ class Quiz extends Component {
       })
       .catch((error) => console.error(error));
   };
+
+  setTimer = () => {
+    const countDownTime = Date.now() + 5000;
+    this.interval = setInterval(() => {
+        let now = new Date();
+        let distance = countDownTime - now;
+
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (distance < 0) {
+            clearInterval(this.interval);
+            this.setState({
+                time: {
+                    minutes: 0,
+                    seconds: 0
+                }
+            }, () => {
+                this.showNextQuestion();
+                this.setTimer()
+            });
+          } else {
+            this.setState({
+                time: {
+                    minutes, seconds
+                }
+            });
+        }
+    }, 1000);
+
+  }
+  //alert('Timeout!')
+ // this.props.history.push('/spinner');
+
 
   handleResult = (res) => {
     if (res.correct) {
@@ -65,6 +102,7 @@ class Quiz extends Component {
     this.setState((prevState) => ({ current: prevState.current + 1 }));
   };
 
+  
   render() {
     const { current, questions, quizOver, loaded, score } = this.state;
     const category = this.props.location.state
@@ -92,6 +130,7 @@ class Quiz extends Component {
     ) : (
       <Spinner />
     );
+    
   }
 }
 
