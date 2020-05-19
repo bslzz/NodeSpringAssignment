@@ -6,7 +6,7 @@ import './Question.css';
 import { Link } from 'react-router-dom';
 
 const Question = (props) => {
-  const { question, incorrect_answers, correct_answer } = props.question;
+  const { question, incorrect_answers, correct_answer, countDownTime } = props.question;
   const options = [...incorrect_answers, correct_answer];
   options.sort(() => 0.5 - Math.random());
 
@@ -21,8 +21,9 @@ const Question = (props) => {
             <h2 className="card-title text-muted">
               {props.category} Quiz | Question {props.number + 1}
             </h2>
+            <h5>{countDownTime}</h5>
             <ProgressBar number={props.number * 5} />
-            <h5>Time left: </h5>
+
             <h3 className="card-subtitle mb-3">{Parser(question)}</h3>
             <AnswerOptions
               options={options}

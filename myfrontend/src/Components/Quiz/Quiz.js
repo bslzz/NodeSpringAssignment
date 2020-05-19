@@ -41,24 +41,26 @@ class Quiz extends Component {
   };
 
   setTimer = () => {
-    const countDownTime = Date.now() + 5000;
+    const countDownTime = Date.now() + 12000;
     this.interval = setInterval(() => {
         let now = new Date();
         let distance = countDownTime - now;
 
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const timeLeft = seconds;
+        console.log(timeLeft);
+        document.getElementById("seconds").innerHTML = seconds + " seconds" 
 
-        if (distance < 0) {
+        if (distance <= 0) {
             clearInterval(this.interval);
             this.setState({
                 time: {
-                    minutes: 0,
                     seconds: 0
                 }
             }, () => {
-                this.showNextQuestion();
                 this.setTimer()
+                this.showNextQuestion();
             });
         }
     }, 1000);
@@ -97,7 +99,7 @@ class Quiz extends Component {
 
   
   render() {
-    const { current, questions, quizOver, loaded, score } = this.state;
+    const { current, questions, quizOver, loaded, score, timeLeft } = this.state;
     const category = this.props.location.state
       ? this.props.location.state.category
       : '';
@@ -113,19 +115,22 @@ class Quiz extends Component {
       return <Redirect to={redirectObj} />;
     }
 
+    
     return loaded ? (
+      <>
+       <h5>Time left: </h5>
+   <h5 id="seconds"></h5>
       <Question
         question={questions[current]}
         number={current}
         onHandleResult={this.handleResult}
         category={category}
       />
+      
+      </>
     ) : 
-    <h5>Time left: {countDownTime}</h5>
-    (
       <Spinner />
-    );
-    
+    ;
   }
 }
 

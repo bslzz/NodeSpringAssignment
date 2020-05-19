@@ -3,7 +3,7 @@ import Parser from 'html-react-parser';
 
 class AnswerOptions extends Component {
   state = {
-    answer: ''
+    answer: '',
   };
 
   checkAnswer = (e) => {
@@ -42,12 +42,14 @@ class AnswerOptions extends Component {
     ));
 
     return (
+      <>
       <form onSubmit={this.checkAnswer}>
         <div className="mb-4">{checkboxes}</div>
         <button className="btn btn-secondary" type="submit">
           Next question
         </button>
       </form>
+      </>
     );
   }
 }
