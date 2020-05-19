@@ -1,6 +1,6 @@
 import React from 'react';
 import Wheel from '../wheel/Appwheel';
-import './Indexwheel.css';
+import './IndexWheel.css';
 
 export const QuizCategories = [
   { id: 9, name: 'General knowledge' },
