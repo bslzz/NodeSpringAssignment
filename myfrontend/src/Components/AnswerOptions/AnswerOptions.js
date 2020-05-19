@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Parser from 'html-react-parser';
+import React, { Component } from "react";
+import Parser from "html-react-parser";
 
 class AnswerOptions extends Component {
   state = {
-    answer: '',
+    answer: "",
   };
 
   checkAnswer = (e) => {
@@ -15,7 +15,7 @@ class AnswerOptions extends Component {
       correct: this.state.answer === this.props.correct,
       answer: this.state.answer,
     };
-    this.setState({ answer: '' });
+    this.setState({ answer: "" });
     this.props.onHandleResult(res);
   };
 
@@ -44,7 +44,14 @@ class AnswerOptions extends Component {
     return (
       <form onSubmit={this.checkAnswer}>
         <div className="mb-4">{checkboxes}</div>
-        <button className="btn btn-secondary" type="submit">
+        <button
+          className="btn btn-secondary"
+          type="submit"
+          style={{
+            background: "rgb(231, 160, 6)",
+            border: "none",
+          }}
+        >
           Next question
         </button>
       </form>

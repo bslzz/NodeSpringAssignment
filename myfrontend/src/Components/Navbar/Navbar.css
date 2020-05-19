@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 
 .mainNav {
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
 }
 .brand-text {
   font-size: 2rem;
-  color: #2c2c2c;
+  color: #fffbfb;
 }
 .main-links {
   font-size: 1.2rem;

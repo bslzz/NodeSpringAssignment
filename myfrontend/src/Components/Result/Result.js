@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { ResultAnswers as Answers } from './ResultAnswers';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import './Result.css';
@@ -22,6 +22,9 @@ const Result = (props) => {
     <Redirect to="/spinner" />
   ) : (
     <>
+      <Link to="/" className="nav-link logout">
+        Logout
+      </Link>
       <section className="container resultbox">
         <div
           style={{ border: 'none', outline: 'none' }}
@@ -36,19 +39,44 @@ const Result = (props) => {
               You got {score} out of {questions.length} questions right.
             </h3>
 
-            <button className="btn btn-secondary mr-2" onClick={toggleAnswers}>
+            <button
+              className="btn btn-secondary mr-2"
+              style={{
+                background: ' rgb(194, 132, 0)',
+                border: 'none',
+              }}
+              onClick={toggleAnswers}
+            >
               Show answers
             </button>
             <button
               className="btn btn-secondary mr-2"
               onClick={() => setNewGame(true)}
+              style={{
+                background: ' rgb(194, 132, 0)',
+                border: 'none',
+              }}
             >
               Try Again
             </button>
             <button
-              style={{ outline: 'none', border: 'none', borderRadius: '5px' }}
+              style={{
+                outline: 'none',
+                border: 'none',
+                background: ' rgb(194, 132, 0)',
+                borderRadius: '5px',
+              }}
             >
-              <a className="btn btn-secondary" href="/">
+              <a
+                className="btn btn-secondary"
+                style={{
+                  outline: 'none',
+                  border: 'none',
+                  background: ' rgb(194, 132, 0)',
+                  borderRadius: '5px',
+                }}
+                href="/"
+              >
                 Logout
               </a>
             </button>

@@ -1,13 +1,13 @@
-import React from 'react';
-import './LogIn.css';
-import axios from 'axios';
+import React from "react";
+import "./LogIn.css";
+import axios from "axios";
 
 class LogIn extends React.Component {
   // the states that are required to log in
 
   state = {
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   };
 
   handleSubmit = (e) => {
@@ -16,22 +16,22 @@ class LogIn extends React.Component {
     const { username, password } = this.state;
 
     !username || !password
-      ? alert('All fields are mandatory')
+      ? alert("All fields are mandatory")
       : axios({
-          url: '/login',
-          method: 'POST',
+          url: "/login",
+          method: "POST",
           data: {
             username,
             password,
           },
         })
           .then((response) => {
-            this.props.history.push('/spinner');
+            this.props.history.push("/spinner");
             const isAuthenticated = response.data.isAuthenticated;
-            window.localStorage.setItem('isAuthenticated', isAuthenticated);
+            window.localStorage.setItem("isAuthenticated", isAuthenticated);
           })
           .catch((error) => {
-            alert('User not found. ' + error.message);
+            alert("User not found. " + error.message);
           });
   };
 
@@ -43,9 +43,9 @@ class LogIn extends React.Component {
   };
 
   render() {
-    const isAuthenticated = window.localStorage.getItem('isAuthenticated');
+    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
     if (!isAuthenticated) {
-      window.localStorage.removeItem('isAuthenticated');
+      window.localStorage.removeItem("isAuthenticated");
     }
     return (
       <div className="main_div">
@@ -70,9 +70,14 @@ class LogIn extends React.Component {
               />
               <label for="password">Password</label>
             </div>
-            <input onClick={this.handleSubmit} type="submit" value="login" />
+            <input
+              onClick={this.handleSubmit}
+              type="submit"
+              value="login"
+              style={{ background: "rgb(194, 132,0)" }}
+            />
             <p className="signup">
-              Don't have an account? <a href="/register">Signup</a>
+              Don't have an account? <a href="/register">Register here.</a>
             </p>
           </form>
         </div>

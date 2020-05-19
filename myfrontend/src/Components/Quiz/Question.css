@@ -7,20 +7,16 @@
 }
 
 .mainquestion {
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  background-color: #49d176;
-  background-image: linear-gradient(
-    rgba(10, 100, 240, 0.25),
-    rgba(50, 20, 290, 0.45)
-  );
+  box-shadow: 0 1px 5px rgba(231, 221, 221, 0.3);
+  background: #ffffff;
   border: none;
   outline: none;
   font-family: 'Muli', sans-serif;
+  color: #057764;
 }
 .mainquestion:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(1, 43, 32, 0.315);
 }
-
 .logout {
   position: absolute;
   bottom: 0;
