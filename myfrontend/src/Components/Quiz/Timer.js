@@ -5,7 +5,7 @@ const Timer = (props) => {
     <>
       <div>
         <h5>
-        Time left:{} />
+        Time left:{}
         </h5>
       </div>
     </>

@@ -50,12 +50,12 @@ class Quiz extends Component {
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
         const timeLeft = seconds;
         console.log(timeLeft);
-        document.getElementById("seconds").innerHTML = seconds + " seconds" 
 
         if (distance <= 0) {
             clearInterval(this.interval);
             this.setState({
                 time: {
+                    minutes: 0,
                     seconds: 0
                 }
             }, () => {
@@ -64,7 +64,6 @@ class Quiz extends Component {
             });
         }
     }, 1000);
-
   }
   //alert('Timeout!')
 
@@ -99,7 +98,7 @@ class Quiz extends Component {
 
   
   render() {
-    const { current, questions, quizOver, loaded, score, timeLeft } = this.state;
+    const { current, questions, quizOver, loaded, score } = this.state;
     const category = this.props.location.state
       ? this.props.location.state.category
       : '';
@@ -118,8 +117,6 @@ class Quiz extends Component {
     
     return loaded ? (
       <>
-       <h5>Time left: </h5>
-   <h5 id="seconds"></h5>
       <Question
         question={questions[current]}
         number={current}
