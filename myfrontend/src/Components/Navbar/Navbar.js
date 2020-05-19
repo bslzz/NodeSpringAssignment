@@ -5,27 +5,6 @@ import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic } from '@fortawesome/free-solid-svg-icons';
 
-// const clickHandler = (e) => {
-//   e.preventDefault();
-//   const result = window.confirm('Are you sure you want to log out?');
-
-//   result
-//     ? axios({
-//         url: '/logout',
-//         method: 'GET',
-//       })
-//         .then((response) => {
-//           this.props.history.push('/');
-//           const isAuthenticated = response.data.isAuthenticated;
-//           window.localStorage.removeItem('isAuthenticated', isAuthenticated);
-//         })
-//         .catch((error) => {
-//           console.log({
-//             msg: 'You have logged out with an error:' + error,
-//           });
-//         })
-//     : console.log('Not logged out');
-// };
 const useAudio = () => {
   const [audio] = useState(new Audio('/assets/bensound-littleidea.mp3'));
   const [playing, setPlaying] = useState(false);

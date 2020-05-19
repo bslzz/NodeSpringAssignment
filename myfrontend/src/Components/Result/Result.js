@@ -19,7 +19,7 @@ const Result = (props) => {
   };
 
   return newGame ? (
-    <Redirect to="/category" />
+    <Redirect to="/spinner" />
   ) : (
     <>
       <section className="container resultbox">

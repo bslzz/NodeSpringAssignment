@@ -26,7 +26,7 @@ class LogIn extends React.Component {
           },
         })
           .then((response) => {
-            this.props.history.push('/category');
+            this.props.history.push('/spinner');
             const isAuthenticated = response.data.isAuthenticated;
             window.localStorage.setItem('isAuthenticated', isAuthenticated);
           })
