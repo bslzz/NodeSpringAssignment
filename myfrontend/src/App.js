@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import Instructions from './Components/Instructions/Instructions';
 import Quiz from './Components/Quiz/Quiz';
 import Result from './Components/Result/Result';
-import Indexwheel from './Components/Indexwheel/Indexwheel';
+import Indexwheel from './Components/Indexwheel/IndexWheel';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

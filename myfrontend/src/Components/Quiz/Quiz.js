@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Question from './Question';
 import Spinner from './Spinner';
-import { QuizCategories } from '../Indexwheel/Indexwheel';
+import { QuizCategories } from '../Indexwheel/IndexWheel';
 
 class Quiz extends Component {
   state = {
