@@ -60,12 +60,6 @@ class Quiz extends Component {
                 this.showNextQuestion();
                 this.setTimer()
             });
-          } else {
-            this.setState({
-                time: {
-                    minutes, seconds
-                }
-            });
         }
     }, 1000);
 
