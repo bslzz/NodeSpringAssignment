@@ -1,5 +1,5 @@
 :root {
-  --wheel-size: 480px;
+  --wheel-size: 470px;
   --wheel-slice-spacing: 50px;
   --wheel-border-size: 5px;
   --wheel-color: #057764;
@@ -15,6 +15,7 @@
 }
 .mainspinner {
   min-height: 87vh;
+  padding-top: 1rem;
 }
 
 /* Wheel container, outer circle */
@@ -214,4 +215,11 @@
 .logout-btn:hover {
   color: #2c2c2c;
   text-decoration: none;
+}
+@media only screen and (max-width: 700px) {
+  :root {
+    --wheel-size: 350px;
+    --wheel-slice-spacing: 30px;
+    --wheel-border-size: 3px;
+  }
 }

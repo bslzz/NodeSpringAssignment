@@ -34,7 +34,7 @@
   text-decoration: none;
 }
 
-.spinner {
+.mainspinner {
   min-height: 100vh;
   display: grid;
   place-items: center;

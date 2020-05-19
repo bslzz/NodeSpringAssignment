@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import axios from "axios";
-import Question from "./Question";
-import Spinner from "./Spinner";
-import { QuizCategories } from "../Indexwheel/indexwheel";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+import Question from './Question';
+import Spinner from './Spinner';
+import { QuizCategories } from '../Indexwheel/IndexWheel';
 
 class Quiz extends Component {
   state = {
@@ -29,8 +29,8 @@ class Quiz extends Component {
             question: data.question,
             correct_answer: data.correct_answer,
             incorrect_answers: data.incorrect_answers,
-            user_answer: "",
-            correct: "",
+            user_answer: '',
+            correct: '',
           };
         });
         this.setState({ loaded: true, questions: questions });
@@ -72,15 +72,15 @@ class Quiz extends Component {
       ? QuizCategories.find(
           (item) => item.id === parseInt(this.props.match.params.category)
         ).name
-      : "";
+      : '';
 
     const redirectObj = {
-      pathname: "/result",
+      pathname: '/result',
       state: { result: { questions, score } },
     };
 
     if (quizOver) {
-      let audio = new Audio("/assets/quizresult.mp3");
+      let audio = new Audio('/assets/quizresult.mp3');
       audio.play();
 
       return <Redirect to={redirectObj} />;

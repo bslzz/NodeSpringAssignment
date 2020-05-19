@@ -22,17 +22,18 @@ const Instructions = () => {
           <li>
             {' '}
             <FontAwesomeIcon className="fas hand" icon={faCircle} />
-            Select your choice of category for the questions
+            Spin the wheel to get the category for the questions
           </li>
           <li>
             {' '}
             <FontAwesomeIcon className="fas hand" icon={faCircle} />
-            Answer 10 questions
+            Answer 10 questions from the category
           </li>
           <li>
             {' '}
             <FontAwesomeIcon className="fas hand" icon={faCircle} />
-            Your correct points and answers of the questions are displayed
+            Your correct points and answers of the questions are displayed after
+            you answer all the questions
           </li>
           <li>
             {' '}
