@@ -1,13 +1,13 @@
-import React from 'react';
-import '../LogIn/LogIn.css';
-import axios from 'axios';
+import React from "react";
+import "../LogIn/LogIn.css";
+import axios from "axios";
 
 class Register extends React.Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
-    confirm_password: '',
+    username: "",
+    email: "",
+    password: "",
+    confirm_password: "",
   };
 
   handleChange = (e) => {
@@ -23,12 +23,12 @@ class Register extends React.Component {
     const { username, email, password, confirm_password } = this.state;
 
     !username || !password || !email || !confirm_password
-      ? alert('All fields are mandatory')
+      ? alert("All fields are mandatory")
       : password !== confirm_password
-      ? alert('Passwords not matched')
+      ? alert("Passwords not matched")
       : axios({
-          url: '/register',
-          method: 'POST',
+          url: "/register",
+          method: "POST",
           data: {
             username,
             email,
@@ -37,10 +37,10 @@ class Register extends React.Component {
           },
         })
           .then(() => {
-            this.props.history.push('/login');
+            this.props.history.push("/login");
           })
           .catch((error) => {
-            console.log('Error occured: ' + error);
+            console.log("Error occured: " + error);
           });
   };
 
@@ -86,7 +86,11 @@ class Register extends React.Component {
               />
               <label for="confirm_password">Confirm Password</label>
             </div>
-            <input type="submit" value="register" />
+            <input
+              type="submit"
+              value="register"
+              style={{ background: "rgb(194, 132,0)" }}
+            />
             <p className="signup">
               Already have an account? <a href="/login">Login</a>
             </p>

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
-import Question from './Question';
-import Spinner from './Spinner';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import Question from "./Question";
+import Spinner from "./Spinner";
+import { QuizCategories } from "../Indexwheel/indexwheel";
 
 class Quiz extends Component {
   state = {
@@ -14,12 +15,12 @@ class Quiz extends Component {
   };
 
   componentDidMount() {
-    this.getQuestions();
+    const { category } = this.props.match.params;
+    this.getQuestions(category);
   }
 
-  getQuestions = () => {
-    const id = this.props.location.state ? this.props.location.state.id : 9;
-    const url = `https://opentdb.com/api.php?amount=10&category=${id}&easy=difficulty&type=multiple`;
+  getQuestions = (category) => {
+    const url = `https://opentdb.com/api.php?amount=10&category=${category}&easy=difficulty&type=multiple`;
     axios
       .get(url)
       .then((response) => {
@@ -28,8 +29,8 @@ class Quiz extends Component {
             question: data.question,
             correct_answer: data.correct_answer,
             incorrect_answers: data.incorrect_answers,
-            user_answer: '',
-            correct: '',
+            user_answer: "",
+            correct: "",
           };
         });
         this.setState({ loaded: true, questions: questions });
@@ -67,16 +68,19 @@ class Quiz extends Component {
 
   render() {
     const { current, questions, quizOver, loaded, score } = this.state;
-    const category = this.props.location.state
-      ? this.props.location.state.category
-      : '';
+    const category = this.props.match.params.category
+      ? QuizCategories.find(
+          (item) => item.id === parseInt(this.props.match.params.category)
+        ).name
+      : "";
+
     const redirectObj = {
-      pathname: '/result',
+      pathname: "/result",
       state: { result: { questions, score } },
     };
 
     if (quizOver) {
-      let audio = new Audio('/assets/quizresult.mp3');
+      let audio = new Audio("/assets/quizresult.mp3");
       audio.play();
 
       return <Redirect to={redirectObj} />;

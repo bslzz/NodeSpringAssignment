@@ -1,32 +1,24 @@
-import React from 'react';
-import Wheel from '../Wheel/Wheel';
-import './IndexWheel.css';
+import React from "react";
+import Wheel from "../wheel/Appwheel";
+import "./indexwheel.css";
 
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = [
-      'General Knowledge',
-      'Science',
-      'Maths',
-      'Video Games',
-      'Geography',
-      'Music',
-      'Computer',
-      'Entertainment',
-      'Sports',
-      'Movies',
-    ];
-  }
+export const QuizCategories = [
+  { id: 9, name: "General knowledge" },
+  { id: 17, name: "Science & nature" },
+  { id: 15, name: "Video Games" },
+  { id: 22, name: "Geography" },
+  { id: 23, name: "History" },
+  { id: 27, name: "Animals" },
+  { id: 21, name: "Sports" },
+  { id: 12, name: "Music" },
+  { id: 10, name: "Books" },
+  { id: 11, name: "Film" },
+];
 
-  render() {
-    const listitems = this.state;
-    return (
-      <div className="App">
-        <Wheel items={listitems} />
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <div className="App">
+      <Wheel items={QuizCategories} />
+    </div>
+  );
 }
-
-export default App;

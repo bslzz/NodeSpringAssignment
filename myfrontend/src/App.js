@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import Instructions from './Components/Instructions/Instructions';
 import Quiz from './Components/Quiz/Quiz';
 import Result from './Components/Result/Result';
-import Indexwheel from './Components/IndexWheel/IndexWheel';
+import indexwheel from './Components/Indexwheel/indexwheel';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,9 +25,9 @@ const App = () => {
           <Route path="/register" component={Register}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/instructions" component={Instructions}></Route>
-          <Route path="/quiz" component={Quiz}></Route>
+          <Route path="/quiz/:category?" component={Quiz}></Route>
           <Route path="/result" component={Result}></Route>
-          <Route path="/spinner" component={Indexwheel}></Route>
+          <Route path="/spinner" component={indexwheel}></Route>
         </Switch>
       </Router>
       <Footer />

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@700&display=swap');
 
 .homepage {
   padding: 1rem;
   min-height: 100vh;
-  font-family: 'MedievalSharp', cursive;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .gamelogo {
@@ -17,6 +17,7 @@
   text-align: center;
   padding: 2rem 0;
   font-size: 4rem;
+  color: #e1f7ff;
 }
 
 .logo {
@@ -33,7 +34,7 @@
 
 .link1,
 .link2 {
-  color: rgb(226, 241, 9);
+  color: #e1f7ff;
   text-decoration: none;
   transition: 0.3s linear;
   display: inline-block;
@@ -47,7 +48,7 @@
 
 .far.userplus,
 .far.user {
-  color: rgb(251, 255, 0);
+  color: rgb(194, 132, 0);
   font-size: 1.4rem;
   margin-right: 5px;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ProgressBar = (props) => {
   return (
@@ -9,7 +9,7 @@ const ProgressBar = (props) => {
         aria-valuenow={props.number}
         aria-valuemin="0"
         aria-valuemax="100"
-        style={{ width: props.number + '%' }}
+        style={{ width: props.number + "%", background: "rgb(231, 160, 6)" }}
       ></div>
     </div>
   );

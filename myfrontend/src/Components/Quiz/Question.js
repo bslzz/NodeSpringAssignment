@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom';
 
 const Question = (props) => {
   const { question, incorrect_answers, correct_answer } = props.question;
-
   const options = [...incorrect_answers, correct_answer];
   options.sort(() => 0.5 - Math.random());
 
   return (
-    <div className="questionpage">
+    <>
       <Link to="/" className="nav-link logout">
         Logout
       </Link>
@@ -36,7 +35,7 @@ const Question = (props) => {
         </div>
       </div>
       ;
-    </div>
+    </>
   );
 };
 
