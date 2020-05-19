@@ -1,0 +1,28 @@
+{
+  "name": "mastermindquiz",
+  "version": "1.0.0",
+  "description": "quiz app using node, react and mongodb",
+  "main": "app.js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "myfrontend": "cd myfrontend && npm start",
+    "mybackend": "cd mybackend && nodemon app.js",
+    "dev": "concurrently \"npm run mybackend\" \"npm run myfrontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bslzz/NodeSpringAssignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bslzz/NodeSpringAssignment/issues"
+  },
+  "homepage": "https://github.com/bslzz/NodeSpringAssignment#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "html-parser": "^0.11.0",
+    "nodemon": "^2.0.3"
+  }
+}

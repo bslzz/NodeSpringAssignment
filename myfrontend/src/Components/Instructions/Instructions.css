@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.instructions {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+@media (max-width: 770px) {
+  .instructions h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+footer {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: rgb(5, 5, 5, 0.2);
+}

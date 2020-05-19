@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.finalcontent {
+  background-color: #49d176;
+  background-image: linear-gradient(
+    rgba(10, 100, 240, 0.2),
+    rgba(50, 20, 290, 0.6)
+  );
+  min-height: 100vh;
+}

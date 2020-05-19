@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap");
+
+.resultbox {
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.mainresult {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  background: rgb(252, 252, 252);
+  border: none;
+  outline: none;
+  font-family: "Muli", sans-serif;
+}
+.mainresult:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+/*.logout {
+  position: absolute;
+  top: 3%;
+  right: 33%;
+  font-size: 1rem;
+  font-family: "MedievalSharp";
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+.logout:hover {
+  color: #2c2c2c;
+  text-decoration: none;
+}*/
+.card-title,
+.card-subtitle {
+  font-size: 25px;
+  text-align: justify;
+}
