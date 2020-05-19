@@ -22,6 +22,7 @@ const Question = (props) => {
               {props.category} Quiz | Question {props.number + 1}
             </h2>
             <ProgressBar number={props.number * 5} />
+            <h5>Time left: </h5>
             <h3 className="card-subtitle mb-3">{Parser(question)}</h3>
             <AnswerOptions
               options={options}

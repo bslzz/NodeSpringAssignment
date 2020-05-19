@@ -65,7 +65,6 @@ class Quiz extends Component {
 
   }
   //alert('Timeout!')
- // this.props.history.push('/spinner');
 
 
   handleResult = (res) => {
@@ -121,7 +120,9 @@ class Quiz extends Component {
         onHandleResult={this.handleResult}
         category={category}
       />
-    ) : (
+    ) : 
+    <h5>Time left: {countDownTime}</h5>
+    (
       <Spinner />
     );
     
