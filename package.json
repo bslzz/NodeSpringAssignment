@@ -22,7 +22,6 @@
   "homepage": "https://github.com/bslzz/NodeSpringAssignment#readme",
   "dependencies": {
     "concurrently": "^5.2.0",
-    "html-parser": "^0.11.0",
     "nodemon": "^2.0.3"
   }
 }
