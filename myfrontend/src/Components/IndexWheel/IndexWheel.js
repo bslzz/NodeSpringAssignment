@@ -1,6 +1,6 @@
 import React from 'react';
-import Wheel from '../wheel/Appwheel';
-import './indexwheel.css';
+import Wheel from '../Wheel/Wheel';
+import './IndexWheel.css';
 
 export class App extends React.Component {
   constructor(props) {

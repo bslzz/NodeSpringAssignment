@@ -7,21 +7,25 @@ import { Link } from 'react-router-dom';
 
 const Question = (props) => {
   const { question, incorrect_answers, correct_answer } = props.question;
+
   const options = [...incorrect_answers, correct_answer];
   options.sort(() => 0.5 - Math.random());
 
   return (
-    <>
+    <div className="questionpage">
       <Link to="/" className="nav-link logout">
         Logout
       </Link>
       <div className="container questionbox">
-        <div className="card m-5 shadow-sm">
+        <div
+          style={{ border: 'none', outline: 'none' }}
+          className="card m-5 shadow-sm"
+        >
           <div className="card-body mainquestion">
             <h2 className="card-title text-muted">
               {props.category} Quiz | Question {props.number + 1}
             </h2>
-            <ProgressBar number={props.number * 5} />
+            <ProgressBar number={props.number * 10} />
             <h3 className="card-subtitle mb-3">{Parser(question)}</h3>
             <AnswerOptions
               options={options}
@@ -32,7 +36,7 @@ const Question = (props) => {
         </div>
       </div>
       ;
-    </>
+    </div>
   );
 };
 

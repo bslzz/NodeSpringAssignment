@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import Instructions from './Components/Instructions/Instructions';
 import Quiz from './Components/Quiz/Quiz';
 import Result from './Components/Result/Result';
-import indexwheel from './Components/Indexwheel/indexwheel';
+import Indexwheel from './Components/IndexWheel/IndexWheel';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/instructions" component={Instructions}></Route>
           <Route path="/quiz" component={Quiz}></Route>
           <Route path="/result" component={Result}></Route>
-          <Route path="/spinner" component={indexwheel}></Route>
+          <Route path="/spinner" component={Indexwheel}></Route>
         </Switch>
       </Router>
       <Footer />
