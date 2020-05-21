@@ -40,6 +40,9 @@ const NavHeader = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto main-links">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
             <Link to="/about" className="nav-link">
               About
             </Link>
