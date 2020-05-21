@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        Copyright © {currentYear}. MasterMind. All rights reserved.
+        Copyright © {currentYear}. BrainWrecker. All rights reserved.
       </footer>
     </div>
   );

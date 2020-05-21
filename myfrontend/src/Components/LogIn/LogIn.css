@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .main_div {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -41,14 +41,10 @@
   outline: none;
   background: transparent;
 }
-.box .inputBox input:focus ~ label {
-  top: -25px;
-  font-size: 1.2rem;
-}
 
 .box .inputBox label {
   position: absolute;
-  top: -16px;
+  top: -22px;
   left: 0;
   letter-spacing: 1px;
   padding: 5px 0;
@@ -58,7 +54,7 @@
   pointer-events: none;
 }
 
-.box input[type="submit"] {
+.box input[type='submit'] {
   background: transparent;
   border: none;
   outline: none;
