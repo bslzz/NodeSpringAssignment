@@ -31,11 +31,10 @@ const NavHeader = () => {
       <Container>
         <Link to="/" className="navbar-brand main-brand">
           <img
-            src="assets/MasterMind-logo.png"
+            src="assets/game-logo.png"
             alt="gamelogo"
-            style={{ height: '28', width: '50px' }}
+            style={{ width: '200px' }}
           />
-          <span className="brand-text"> MasterMind</span>
         </Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
