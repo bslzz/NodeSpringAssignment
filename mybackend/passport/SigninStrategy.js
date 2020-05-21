@@ -14,7 +14,7 @@ const LoginStrategy = new LocalStrategy(function (username, password, done) {
     const isPasswordValid = bcrypt.compareSync(password, record.password);
 
     if (!isPasswordValid) {
-      return done('Email or Password not valid', null);
+      return done('Username or Password not valid', null);
     }
     return done(null, record);
   });

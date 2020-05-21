@@ -1,33 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
-.homepage {
-  padding: 1rem;
-  min-height: 100vh;
-  font-family: 'Proza Libre', sans-serif;
+.maintitle {
+  display: grid;
+  place-items: center;
+  min-height: 90vh;
+}
+.title h1,
+.title h2,
+.title h3 {
+  color: #e9e9e9;
+  font-family: 'Squada One';
 }
 
-.gamelogo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 40vh;
+.title h1 {
+  font-size: 5rem;
 }
-.gamelogo h1 {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 4rem;
-  color: #e1f7ff;
+.title h2 {
+  font-size: 3.5rem;
+}
+.title h3 {
+  font-size: 2.5rem;
 }
 
-.logo {
-  border-radius: 10%;
-  height: 250px;
-  width: 300px;
+.image img {
+  width: 700px;
 }
 
 .links {
-  margin: 1rem;
   font-size: 2rem;
   font-weight: 800;
 }
@@ -62,8 +61,17 @@
   margin-top: 1.5rem;
 }
 
-@media (max-width: 770px) {
-  .gamelogo h1 {
-    font-size: 2.6rem;
+@media only screen and (max-width: 650px) {
+  .image img {
+    width: 550px;
+  }
+  .title h1 {
+    font-size: 4rem;
+  }
+  .title h2 {
+    font-size: 2.5rem;
+  }
+  .title h3 {
+    font-size: 1.5rem;
   }
 }
